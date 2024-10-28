@@ -23,8 +23,8 @@ fs.readFile(path.join(__dirname, 'car_brands.txt'), 'utf8', (err, data) => {
         const brand = brands[Math.floor(Math.random() * brands.length)]; // Losowa marka
         const year = Math.floor(Math.random() * (2023 - 1990 + 1)) + 1990; // Losowy rok
         const color = colors[Math.floor(Math.random() * colors.length)]; // Losowy kolor
-
-        content += `  { id: ${id}, brand: "${brand}", year: ${year}, color: "${color}" },\n`;
+        const rating = Math.floor(Math.random() * (10 - 0 + 1))+ 0; // Losowy Rating
+        content += `  { id: ${id}, brand: "${brand}", year: ${year}, color: "${color}", rating: ${rating}},\n`;
     }
 
     content += "];\n";
