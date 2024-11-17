@@ -18,7 +18,7 @@ function Lab2() {
     }
     return (  
             
-        <div className="App">
+        <div className="App ">
         <h1>Car Profile</h1>
         <CarProfile key={car.id} id={car.id} brand={car.brand} year={car.year} color={car.color}/>
       </div>

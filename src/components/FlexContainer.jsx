@@ -1,41 +1,33 @@
-import React from "react";
-import { Card } from 'react-bootstrap';
-const data = [
-    { name: "Liam Stone", id: 1 },
-    { name: "Olivia Grant", id: 2 },
-    { name: "Noah Brooks", id: 3 },
-    { name: "Emma Hayes", id: 4 },
-    { name: "Ava Reed", id: 5 },
-    { name: "Sophia King", id: 6 },
-    { name: "Isabella West", id: 7 },
-    { name: "Mia Scott", id: 8 },
-    { name: "Amelia Carter", id: 9 },
-    { name: "Harper Price", id: 10 },
-    { name: "Elijah Wood", id: 11 },
-    { name: "James Turner", id: 12 },
-    { name: "Benjamin Fisher", id: 13 },
-    { name: "Lucas Adams", id: 14 },
-    { name: "Mason Clark", id: 15 },
-    { name: "Ethan Lee", id: 16 },
-    { name: "Logan Hill", id: 17 },
-    { name: "Alexander Young", id: 18 },
-    { name: "Aiden Baker", id: 19 },
-    { name: "Charlotte Green", id: 20 }
-];
+import React, { useReducer } from 'react';
+import AppReducer from '../data/AppReducer';
+import CarProfile from './CarProfile';
 
-const Item = ({name, id, className}) => 
-    <Card style={{width: `18rem`}} className="border mb-3 p-3 ms-3" key={id}>{name}</Card>;
+function FlexContainer({ data = [], updateData }) {
+    const [items, dispatch] = useReducer(AppReducer, data);
 
-function FlexContainer() {
-    return (  
-        
-        <div class="d-flex flex-wrap mb-3">
-            {data.map(item => (
-                <Item name={item.name} key={item.id} />
+    // After state changes, update the data in the parent component
+    const handleStateChange = (newState) => {
+        updateData(newState);  // Pass the updated state back to the parent
+    };
 
+    React.useEffect(() => {
+        handleStateChange(items);  // Whenever items change, update data
+    }, [items]);
+
+    return (
+        <div className="d-flex flex-wrap">
+            {items.map(car => (
+                <CarProfile
+                    key={car.id}
+                    id={car.id}
+                    brand={car.brand}
+                    year={car.year}
+                    color={car.color}
+                    initialRating={car.rating}  // Pass initial rating
+                    dispatch={dispatch}          // Pass dispatch to CarProfile for state updates
+                />
             ))}
         </div>
-
     );
 }
 

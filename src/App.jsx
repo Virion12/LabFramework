@@ -4,11 +4,6 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import RootLayout from './layouts/RootLayout.jsx'
 import { Route, Routes } from 'react-router-dom'
-import Lab1 from './pages/Lab1.jsx'
-import Lab2 from './pages/Lab2.jsx'
-import Lab3 from './pages/Lab3.jsx'
-import Home from './pages/Home.jsx'
-import NotFound from './pages/NotFound.jsx'
 import { menuItems } from './data/MenuItems.jsx'
 
 
@@ -22,7 +17,7 @@ function App() {
         <Routes>
           {menuItems.map((item)=>(
             <Route key={item.id} path={item.urlPattern} element={item.element}/>
-          ))}
+          ))}``
         </Routes>
         
       <div>

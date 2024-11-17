@@ -4,7 +4,7 @@ import FooterComponent from '../components/FooterComponent.jsx';
 
 const RootLayout = ({ children }) => {
   return (
-    <div className="root-layout">
+    <div className="root-layout mt-0 ">
       {/* Pasek nawigacyjny */}
       <NavBarComponent />
 

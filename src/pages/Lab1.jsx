@@ -1,12 +1,12 @@
 import React from 'react';
 import CarProfile from '../components/CarProfile';
 import { data as carData } from '../data/module-data'; 
-import {Route,Routes} from 'react-router-dom'
+
 
 function Lab1() {
     return (  
             
-        <div className="App">
+        <div className="App ">
         <h1>Car Profiles</h1>
   
         {carData.map(car => (

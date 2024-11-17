@@ -7,7 +7,7 @@ import { menuItems } from '../data/MenuItems';
 
 function NavBarComponent() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar className="bg-body-tertiary mt-0">
       <Container>
         <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
