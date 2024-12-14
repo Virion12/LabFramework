@@ -44,8 +44,8 @@ function EditForm() {
             
             <div className="mb-2">
                 <label htmlFor="eyes" className="form-label">Kolor oczu użytkownika</label>
-                <input type="text" id="eyes" {...register("eyes", { required: true, minLength: 3, maxLength: 20 })} className="form-control" />
-                {errors.eyes && <p className="text-danger">Kolor oczu jest wymagany i musi mieć od 3 do 20 znaków.</p>}
+                <input type="text" id="eyes" {...register("eyes", { required: true, minLength: 5, maxLength: 30 })} className="form-control" />
+                {errors.eyes && <p className="text-danger">Kolor oczu jest wymagany i musi mieć od 5 do 30 znaków.</p>}
             </div>
             
             <div className="mb-2">
@@ -54,7 +54,7 @@ function EditForm() {
                 {errors.rating && <p className="text-danger">Rating jest wymagany i musi być w zakresie od 0 do 10.</p>}
             </div>
 
-            <button type="submit" className="btn btn-primary mt-2">Zapisz</button>
+            <button type="submit" className="btn btn-primary mt-2">Save</button>
         </form>
     );
 }

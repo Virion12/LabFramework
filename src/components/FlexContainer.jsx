@@ -6,10 +6,10 @@ function FlexContainer({element: Element}) {
    const context = useContext(AppContext);
    const items = context.items;
   return (
-    <Container>
+    <Container >
       <Row>
         {items.map((item) =>
-            <Col key={item.id} className='d-flex justify-content-center mb-4'>
+            <Col key={item.id} className='d-flex justify-content-center mb-4 border border-primary rounded m-5 '>
                 <Element  person={item} />
             </Col>
         )}

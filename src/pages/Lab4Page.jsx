@@ -5,7 +5,7 @@ function Lab4Page() {
   const navigate = useNavigate();
   return (
     <div>
-      <button className='btn btn-primary' onClick={ e => navigate("/lab4/add")}>Dodaj</button>
+      <button className='btn btn-primary' onClick={ e => navigate("/lab4/add")}>Add</button>
     </div>
 
   )

@@ -9,7 +9,7 @@ function RatingBar({rate}) {
         {Array.from({ length: 10 }, (_, index) => (
           <FaStar
             key={index}
-            color={index < clampedRate ? 'black' : 'lightgray'}
+            color={index < clampedRate ? 'blue' : 'lightgray'}
             size={24} 
           />
         ))}

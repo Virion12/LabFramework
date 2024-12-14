@@ -17,10 +17,7 @@ function CreateForm() {
             setErrors([...errors, "Nazwa zadania musi zaczynac sie wielka litera"]);
             return;
         }
-        // if(errors.length != 0){ 
-        //     return;
-        // }
-
+       
         setSending(true);
         await new Promise((resolve) => setTimeout(resolve, 1000)); // fetch, axios
         dispatch({
@@ -61,8 +58,8 @@ function CreateForm() {
           <label htmlFor="rating" className='form-label m-2'>Rating</label>
           <input type="number" name='rating' id='rating' className='form-control' placeholder='Podaj rating od 1 do 10' min="0" max="10"/>
         </div>
-        <button className='btn btn-primary mt-2 mr-2' type='submit' disabled={isSending}>Zapisz</button>
-        <button className='btn btn-secondary mt-2 ' type='reset'>Wyczyść</button>
+        <button className='btn btn-primary mt-2 mr-2' type='submit' disabled={isSending}>Save</button>
+        <button className='btn btn-secondary mt-2 ' type='reset'>Clear</button>
     </form>
     </>
   )

@@ -13,7 +13,7 @@ function PeoplePage() {
         <p>Name: {person.name}</p>
         <p>Birth: {person.birth}</p>
         <p>Eyes: {person.eyes}</p>
-        </div>) : (<span>Brak takiego imienia</span>)}
+        </div>) : (<h1>there is no such person</h1>)}
         </>
      );
 }
